@@ -1,0 +1,20 @@
+<br><html>
+<head>
+<title>代码示例</title>
+</head>
+<body>
+<script language=jscript>
+<!--
+// 请在这里添加您的脚本代码
+var LinkObj = window.document.createElement("A");
+LinkObj.href = "http://isoft.ispcn.com";
+LinkObj.innerText = "连接对象";
+LinkObj.style.color = "red";
+window.document.body.appendChild(LinkObj);
+//-->
+</script>
+</body>
+</html>
+
+ID查询
+window.document.getElementById(IdName)
