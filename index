@@ -1,20 +1,25 @@
-<br><html>
-<head>
-<title>代码示例</title>
-</head>
-<body>
-<script language=jscript>
-<!--
-// 请在这里添加您的脚本代码
-var LinkObj = window.document.createElement("A");
-LinkObj.href = "http://isoft.ispcn.com";
-LinkObj.innerText = "连接对象";
-LinkObj.style.color = "red";
-window.document.body.appendChild(LinkObj);
-//-->
+<script>
+function toScript(val)
+{
+    var value = val.value
+    value  = value.replace(/\\/gi,"\\\\").replace(/"/gi,"\\\"").replace(/'/gi,"\\\'")
+    valArr = value.split("\r\n")
+    value=""
+    
+    for (i=0; i<valArr.length; i++)
+    {
+        value += (i==0) ? "info =" : ""
+        value += "        \"" + valArr[i]
+        value += (i!=valArr.length-1) ? "\"    +\"\\n\"+\n" : "\"\n" 
+    }
+    value+="\ndocument.write(info)"
+    
+    val.value = value
+}
 </script>
-</body>
-</html>
 
-ID查询
-window.document.getElementById(IdName)
+<input type=button value="将 HTML 转为 JavaScript" onclick=toScript(document.all["code"])><br>
+<textarea id=code cols=75 rows=20>
+<table width="300">
+<tr><td align="right">A</td></tr>
+</table></textarea>
